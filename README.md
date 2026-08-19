@@ -1,6 +1,6 @@
 # DAA-practical01-8847
 
-A comprehensive repository for the Design and Analysis of Algorithms (DAA) course. This collection contains practical implementations and explanations of essential algorithms used in computer science, with a focus on sorting and searching techniques. Each practical is designed to build foundational knowledge in algorithm analysis, complexity evaluation, and optimization strategies.
+A comprehensive repository for the Design and Analysis of Algorithms (DAA) course. This collection contains practical implementations and explanations of essential algorithms used in computer science, with a focus on sorting, searching, and recursive techniques. Each practical is designed to build foundational knowledge in algorithm analysis, complexity evaluation, and optimization strategies.
 
 ---
 
@@ -73,13 +73,35 @@ Heap Sort's guaranteed O(n log n) time complexity and O(1) space complexity make
 
 ---
 
+## Practical 004 — Recursion: Iterative and Recursive Factorial
+
+This practical explores the concept of recursion through the lens of factorial calculation. You'll understand how recursive functions work, compare their efficiency with iterative approaches, and learn when each approach is most suitable.
+
+### Understanding Factorial and Its Applications
+Factorial is a fundamental mathematical operation denoted as n!, which represents the product of all positive integers from 1 to n. For example, 5! = 5 × 4 × 3 × 2 × 1 = 120. By definition, 0! = 1. Factorials have numerous applications in mathematics and computer science, including combinatorics (counting combinations and permutations), probability theory, and algorithm analysis. Understanding factorial is an excellent starting point for learning recursion because it's conceptually simple yet demonstrates the power of recursive thinking. Factorial problems appear frequently in programming interviews and competitive programming, making them a valuable concept to master. The factorial function has an interesting mathematical property that makes it naturally suited to recursive definition: n! = n × (n-1)!. This self-referential definition is the essence of recursion. Calculating factorials teaches important lessons about understanding recursive base cases, ensuring termination conditions, and appreciating the elegance of recursive solutions. Additionally, analyzing factorial computation helps develop intuition about time and space complexity in recursive algorithms.
+
+### Iterative Factorial: The Loop-Based Approach
+Iterative factorial calculation uses loops to compute the result by multiplying successive integers. The algorithm starts with a result variable initialized to 1, then iterates from 1 to n, multiplying the result by each number. This straightforward approach is easy to understand and visualize: you're simply building up the product step by step. Iterative factorial has time complexity of O(n) because it performs n multiplications. More importantly, it has space complexity of O(1) because it uses only a constant amount of extra memory regardless of input size. The iterative approach is highly efficient and doesn't require understanding recursion or dealing with function call overhead. It's suitable for all practical purposes and is often preferred in production code where efficiency and simplicity are paramount. The iterative solution is immune to stack overflow issues that can plague recursive solutions with large inputs. Understanding the iterative approach provides a practical baseline for comparison with recursive solutions and demonstrates that multiple approaches can solve the same problem with different trade-offs.
+
+### Recursive Factorial: The Self-Referential Approach
+Recursive factorial calculation relies on the mathematical definition n! = n × (n-1)!. The recursive function calls itself with a smaller input until reaching the base case (0! = 1), then returns and multiplies the results back up the call stack. This elegant approach directly mirrors the mathematical definition, making it intuitive for those familiar with recursion. Recursive factorial has the same time complexity as the iterative version—O(n)—because it still performs n multiplications. However, the space complexity is O(n) due to the call stack, which stores information about each function call. Each recursive call creates a new stack frame, consuming memory proportional to the recursion depth. This difference becomes significant for large inputs: while iterative factorial can handle very large values of n, recursive factorial will eventually hit stack overflow limits, typically around n = 1000 or so depending on system configuration. Despite this limitation, recursive factorial is pedagogically valuable because it teaches recursion principles, including defining base cases, recursive cases, and understanding how recursive calls unwind.
+
+### Comparing Iterative vs. Recursive Factorial
+Comparing iterative and recursive factorial implementations reveals important trade-offs in algorithm design. Iteratively, the computation is straightforward: perform n multiplications in sequence and return. Recursively, you must trust that the recursive call will eventually return a result, then perform a multiplication. From an efficiency perspective, iteration is typically better: O(n) time with O(1) space beats O(n) time with O(n) space. However, recursion offers clarity and elegance for those trained to think recursively. For small values of n (say, up to 100), recursion is perfectly acceptable. For large values (approaching the limits of your chosen integer type), iteration is more practical. The comparison extends beyond just factorial: many algorithmic problems (tree traversal, divide-and-conquer algorithms, backtracking) are most naturally expressed recursively, even if they could be iteratively implemented with explicit stacks. Understanding both approaches develops flexible algorithmic thinking and helps you choose the right tool for each situation.
+
+### Understanding Recursion: Base Cases and Recursive Cases
+Recursion relies on two critical components: a base case and a recursive case. The base case defines when recursion stops, preventing infinite loops and stack overflow. For factorial, the base case is 0! = 1. Without a base case, the function would call itself indefinitely. The recursive case defines how the problem is reduced and how the function calls itself with a smaller subproblem. For factorial, this is n! = n × (n-1)!. The recursive case must make progress toward the base case; otherwise, recursion never terminates. Common recursion errors include missing or incorrect base cases, or recursive cases that don't make progress. When designing recursive solutions, always ask: "What's my base case?" and "Does my recursive case reduce the problem?" Understanding these concepts is fundamental to mastering recursion and applies broadly to trees, graphs, and dynamic programming. Recursion can seem magical to beginners, but it's simply a function calling itself with progressively smaller inputs until reaching a base case, then unwinding and combining results. This pattern appears everywhere in computer science and understanding it deeply opens doors to solving complex problems elegantly.
+
+---
+
 ## File Structure
 ```
 DAA-practical01-8847/
-├── DAA_practical01.ipynb    # Sorting algorithms implementation
-├── DAA_practical02.ipynb    # Linear and Binary Search implementation
-├── DAA_practical03.ipynb    # Max-Heap Sort implementation
-└── README.md                # This file
+├── DAA_practical_01.ipynb      # Sorting algorithms implementation
+├── DAA_practial02.ipynb        # Linear and Binary Search implementation
+├── DAA_practical03.ipynb       # Max-Heap Sort implementation
+├── DAA_Practical04.ipynb       # Recursion: Factorial (Iterative & Recursive)
+└── README.md                    # This file
 ```
 
 ## Author
