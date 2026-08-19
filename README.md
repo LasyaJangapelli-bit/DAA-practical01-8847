@@ -38,9 +38,109 @@ Brief, readable descriptions of common sorting and searching algorithms used in 
 
 ---
 
-Notes:
-- The headlines above are bolded and highlighted as requested; descriptions follow each headline.
-- This README now includes the algorithms covered in practicals 01, 02, and 03: sorting algorithms (Bubble, Selection, Insertion, Merge, Quick, Heap) and searching algorithms (Linear, Binary).
+## Practical 03 — Max-Heap Sort Algorithm
+
+This section includes the contents of `DAA_practical03.ipynb`: an interactive Python implementation of the Max-Heap Sort algorithm.
+
+### Overview
+Max-Heap Sort is a comparison-based sorting algorithm that uses the heap data structure to sort an array. It works by building a max-heap and then repeatedly extracting the maximum element to produce a sorted array.
+
+### Algorithm Description
+
+#### How Max-Heap Sort Works:
+1. **Build Max-Heap**: Convert the array into a max-heap structure where each parent node is greater than or equal to its children.
+2. **Extract Elements**: Repeatedly swap the root (maximum element) with the last element and heapify the remaining heap.
+3. **Result**: Elements are sorted in ascending order.
+
+### Implementation
+
+#### Heapify Function
+```python
+def heapify(arr, n, i):
+    largest = i  # Initialize largest as root
+    l = 2 * i + 1  # left = 2*i + 1
+    r = 2 * i + 2  # right = 2*i + 2
+
+    # See if left child of root exists and is greater than root
+    if l < n and arr[l] > arr[largest]:
+        largest = l
+
+    # See if right child of root exists and is greater than root
+    if r < n and arr[r] > arr[largest]:
+        largest = r
+
+    # Change root, if needed
+    if largest != i:
+        arr[i], arr[largest] = arr[largest], arr[i]  # swap
+
+        # Heapify the root.
+        heapify(arr, n, largest)
+```
+
+**Purpose**: Maintains the max-heap property by ensuring the parent node is greater than its children.
+
+#### Max-Heap Sort Function
+```python
+def max_heap_sort(arr):
+    n = len(arr)
+
+    # Build a maxheap.
+    # Since last parent will be at ((n//2)-1) we can start there.
+    for i in range(n // 2 - 1, -1, -1):
+        heapify(arr, n, i)
+
+    # One by one extract elements
+    for i in range(n - 1, 0, -1):
+        arr[i], arr[0] = arr[0], arr[i]  # swap
+        heapify(arr, i, 0)
+```
+
+**Purpose**: Sorts the array by first building a max-heap and then extracting the maximum element repeatedly.
+
+#### Main Execution
+```python
+# Take input from the user
+user_input = input("Enter numbers separated by spaces: ")
+numbers = list(map(int, user_input.split()))
+
+print("Original array:", numbers)
+
+max_heap_sort(numbers)
+
+print("Sorted array (Max-Heap Sort):", numbers)
+```
+
+### Example
+
+**Input:**
+```
+Enter numbers separated by spaces: 5 1 8 9 5 7 6
+```
+
+**Output:**
+```
+Original array: [5, 1, 8, 9, 5, 7, 6]
+Sorted array (Max-Heap Sort): [1, 5, 5, 6, 7, 8, 9]
+```
+
+### Time & Space Complexity
+
+| Aspect | Complexity |
+|--------|-----------|
+| **Time Complexity** | O(n log n) |
+| **Space Complexity** | O(1) - In-place sorting |
+
+### Key Features
+- ✅ Efficient sorting with O(n log n) time complexity
+- ✅ In-place sorting (O(1) extra space)
+- ✅ Handles duplicate elements correctly
+- ✅ User-friendly input interface
+
+### How to Run
+1. Run the Jupyter notebook (`DAA_practical03.ipynb`)
+2. Execute all cells in order
+3. Enter numbers separated by spaces when prompted
+4. View the original and sorted arrays
 
 ---
 
@@ -148,7 +248,17 @@ Time taken by Binary Search: 0.000119 seconds
 
 ---
 
-If you'd like, I can also:
-- Add the code as a runnable script (e.g., search_examples.py) in the repository.
-- Convert the notebook to a cleaner Markdown file or include output cells inline.
-- Update the README title/structure further (table of contents, badges, license).
+## File Structure
+```
+DAA-practical01-8847/
+├── DAA_practical03.ipynb    # Max-Heap Sort implementation
+├── DAA_practical02.ipynb    # Linear and Binary Search
+├── DAA_practical01.ipynb    # Sorting algorithms
+└── README.md                # This file
+```
+
+## Author
+**Lasya Jangapelli**
+
+## License
+This project is part of the DAA (Design and Analysis of Algorithms) practical coursework.
