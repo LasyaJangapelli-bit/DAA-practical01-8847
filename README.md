@@ -8,7 +8,7 @@ This practical explores the fundamental sorting algorithms that form the backbon
 
 ### Bubble Sort
 
-Bubble Sort is one of the most intuitive sorting algorithms, often the first one taught to beginners. It works by repeatedly stepping through the list, comparing adjacent elements, and swapping them if they're in the wrong order. Multiple passes through the array are made until no more swaps are needed.
+Bubble Sort is one of the most intuitive sorting algorithms, often the first one taught to beginners. It works by repeatedly stepping through the list, comparing adjacent elements, and swapping them if they’re in the wrong order. Multiple passes through the array are made until no more swaps are needed.
 
 ### Selection Sort
 
@@ -182,6 +182,48 @@ Rabin-Karp computes rolling hashes for the pattern and text substrings to find m
 
 ---
 
+## **Practical 008 — Graph Traversal: DFS and BFS**
+
+This practical introduces two fundamental graph traversal algorithms: Depth-First Search (DFS) and Breadth-First Search (BFS). You'll learn how these algorithms systematically visit vertices and edges in a graph, understand how their traversal strategies differ, and explore their applications in computer science.
+
+### Understanding Graphs and Graph Traversal
+
+A graph consists of vertices, also called nodes, and edges that connect pairs of vertices. Graphs can be directed or undirected, and they may be represented using an adjacency matrix or an adjacency list. Graph traversal is the process of visiting every reachable vertex in a systematic manner while avoiding repeated visits.
+
+### Depth-First Search (DFS)
+
+Depth-First Search explores a graph by following one path as deeply as possible before backtracking to visit other unvisited paths. It can be performed using recursion or an explicit stack. A visited record ensures that each vertex is processed at most once, which is important when the graph contains cycles.
+
+### DFS Traversal Process
+
+DFS begins at a selected starting vertex, marks it as visited, and then explores each unvisited neighboring vertex before returning to earlier vertices. This depth-oriented strategy is useful for exploring connected components, detecting cycles, solving maze-like problems, and generating topological orderings in directed acyclic graphs.
+
+### Breadth-First Search (BFS)
+
+Breadth-First Search explores a graph level by level. It visits all immediate neighbors of the starting vertex before moving to vertices at the next level. BFS uses a queue to preserve the order in which vertices are discovered and is particularly useful for finding the shortest path in an unweighted graph.
+
+### BFS Traversal Process
+
+BFS begins at a selected starting vertex, marks it as visited, and places it in a queue. It repeatedly removes the next vertex from the queue and adds each of its unvisited neighbors. This continues until the queue is empty or all reachable vertices have been visited.
+
+### Comparing DFS and BFS
+
+DFS prioritizes depth and is commonly associated with recursion or a stack, while BFS prioritizes breadth and uses a queue. DFS is useful when complete paths or backtracking are required, whereas BFS is preferred for shortest paths in unweighted graphs and level-order exploration. Both algorithms visit each reachable vertex and edge at most once.
+
+### Applications of DFS and BFS
+
+DFS is used in cycle detection, connected-component analysis, topological sorting, maze solving, and path exploration. BFS is used in shortest-path problems on unweighted graphs, network broadcasting, social-network distance analysis, and level-order traversal of trees.
+
+### Complexity Analysis
+
+- DFS Time Complexity: O(V + E)
+- BFS Time Complexity: O(V + E)
+- Space Complexity: O(V) for the visited structure and traversal data structure
+
+Here, V represents the number of vertices and E represents the number of edges in the graph.
+
+---
+
 ## File Structure
 ```
 DAA-practical01-8847/
@@ -192,7 +234,8 @@ DAA-practical01-8847/
 ├── DAA_Practical05.ipynb       # Knapsack Problem (0/1 Knapsack)
 ├── DAA_practical_06.ipynb      # Cross Matrix Multiplication
 ├── DAA_practical_07.ipynb      # Pattern Matching and String Algorithms
-└── README.md                    # This file
+├── DAA_practical_08.ipynb      # Graph Traversal: DFS and BFS
+└── README.md                   # This file
 ```
 
 ## Author
