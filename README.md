@@ -16,7 +16,7 @@ Selection Sort works by dividing the array into two parts: the sorted portion (a
 
 ### Insertion Sort
 
-Insertion Sort builds the sorted array one element at a time by inserting each new element into its correct position within the already-sorted portion. It works similarly to how people organize playing cards in their hands.
+Insertion Sort builds the sorted array one element at a time by inserting each new element into its correct position within the already-sorted portion. It works similarly to how people organize playing cards in their hand.
 
 ### Merge Sort
 
@@ -42,7 +42,7 @@ Heap Sort leverages the heap data structure to achieve efficient sorting. A heap
 
 ## **Practical 002 — Searching: Linear and Binary Search**
 
-This practical demonstrates two essential search techniques and compares their effectiveness. You'll understand the fundamental difference between brute-force searching and smart searching, and learn when each algorithm is appropriate.
+This practical demonstrates two essential search techniques and compares their effectiveness. You'll understand the fundamental difference between brute-force searching and smart searching, and learn when each approach is appropriate.
 
 ### Linear Search: Understanding Sequential Search
 
@@ -82,7 +82,7 @@ Heap Sort repeatedly extracts the maximum element and places it at the end of th
 
 ## **Practical 004 — Recursion: Iterative and Recursive Factorial**
 
-This practical explores the concept of recursion through the lens of factorial calculation. You'll understand how recursive functions work, compare their efficiency with iterative approaches, and learn about the importance of base cases.
+This practical explores the concept of recursion through the lens of factorial calculation. You'll understand how recursive functions work, compare their efficiency with iterative approaches, and learn about base cases and recursive decomposition.
 
 ### Understanding Factorial and Its Applications
 
@@ -104,7 +104,7 @@ Iteration avoids call stack overhead and is typically more memory-efficient; rec
 
 ## **Practical 005 — Knapsack Problem**
 
-The Knapsack Problem (0/1 Knapsack) is a fundamental optimization problem in computer science and combinatorial optimization. Given a set of items, each with a weight and a value, the task is to determine the most valuable subset that fits within a capacity constraint.
+The Knapsack Problem (0/1 Knapsack) is a fundamental optimization problem in computer science and combinatorial optimization. Given a set of items, each with a weight and a value, the task is to determine the best subset of items that maximizes total value without exceeding the knapsack capacity.
 
 Dynamic Programming (DP) Approach:
 
@@ -126,7 +126,7 @@ Complexity:
 
 ## **Practical 006 — Cross Matrix Multiplication**
 
-This practical explores matrix multiplication, specifically the cross product and efficient algorithms for multiplying matrices. You'll understand different approaches to matrix multiplication and the trade-offs between them.
+This practical explores matrix multiplication, specifically the cross product and efficient algorithms for multiplying matrices. You'll understand different approaches to matrix multiplication and their computational trade-offs.
 
 ### Understanding Matrix Multiplication
 
@@ -138,11 +138,11 @@ The standard algorithm performs the basic row-by-column dot product calculation.
 
 ### Cross Product in 3D Space
 
-The cross product is a special case of matrix multiplication applicable to 3D vectors. Given two vectors u and v, the cross product u × v results in a vector perpendicular to both u and v. The magnitude and direction are determined by the angle between them.
+The cross product is a special case of matrix multiplication applicable to 3D vectors. Given two vectors u and v, the cross product u × v results in a vector perpendicular to both u and v. The magnitude reflects the area of the parallelogram they span.
 
 ### Strassen's Algorithm: Divide and Conquer Approach
 
-Strassen's Algorithm reduces the number of scalar multiplications required by recursively dividing matrices into smaller submatrices. It achieves O(n^2.807) time complexity compared to O(n^3) for the traditional approach.
+Strassen's Algorithm reduces the number of scalar multiplications required by recursively dividing matrices into smaller submatrices. It achieves O(n^2.807) time complexity compared to O(n^3) for the standard method.
 
 ### Applications of Matrix Multiplication
 
@@ -158,7 +158,7 @@ Matrix multiplication has widespread applications in computer graphics (transfor
 
 ## **Practical 007 — Coin Change Problem**
 
-This practical explores the classic Coin Change problem, a fundamental optimization problem in dynamic programming. You'll learn how to determine the minimum number of coins needed to make a target amount using available denominations.
+This practical explores the classic Coin Change problem, a fundamental optimization problem in dynamic programming. You'll learn how to determine the minimum number of coins needed to make a target amount using given denominations.
 
 ### Introduction to the Coin Change Problem
 
@@ -166,7 +166,7 @@ A common real-world problem is making change with the fewest possible coins. Giv
 
 ### Dynamic Programming Approach
 
-The problem can be solved efficiently using dynamic programming by defining dp[a] as the minimum number of coins needed to make amount a. Each amount is built from smaller amounts, and the best solution is chosen among all valid coin choices.
+The problem can be solved efficiently using dynamic programming by defining dp[a] as the minimum number of coins needed to make amount a. Each amount is built from smaller amounts, and the best solution for one amount leads to the solution for larger amounts.
 
 ### Recurrence Relation
 
@@ -208,11 +208,11 @@ A graph consists of vertices, also called nodes, and edges that connect pairs of
 
 ### Depth-First Search (DFS)
 
-Depth-First Search explores a graph by following one path as deeply as possible before backtracking to visit other unvisited paths. It can be performed using recursion or an explicit stack. A visited set prevents infinite loops in cyclic graphs.
+Depth-First Search explores a graph by following one path as deeply as possible before backtracking to visit other unvisited paths. It can be performed using recursion or an explicit stack. A visited set prevents revisiting nodes.
 
 ### DFS Traversal Process
 
-DFS begins at a selected starting vertex, marks it as visited, and then explores each unvisited neighboring vertex before returning to earlier vertices. This depth-oriented strategy is useful for exploring all reachable nodes.
+DFS begins at a selected starting vertex, marks it as visited, and then explores each unvisited neighboring vertex before returning to earlier vertices. This depth-oriented strategy is useful for exploring complete paths and backtracking.
 
 ### Breadth-First Search (BFS)
 
@@ -220,11 +220,11 @@ Breadth-First Search explores a graph level by level. It visits all immediate ne
 
 ### BFS Traversal Process
 
-BFS begins at a selected starting vertex, marks it as visited, and places it in a queue. It repeatedly removes the next vertex from the queue and adds each of its unvisited neighbors. This continues until the queue is empty.
+BFS begins at a selected starting vertex, marks it as visited, and places it in a queue. It repeatedly removes the next vertex from the queue and adds each of its unvisited neighbors. This continues until all reachable vertices are processed.
 
 ### Comparing DFS and BFS
 
-DFS prioritizes depth and is commonly associated with recursion or a stack, while BFS prioritizes breadth and uses a queue. DFS is useful when complete paths or backtracking are required, whereas BFS is ideal for shortest-path problems on unweighted graphs.
+DFS prioritizes depth and is commonly associated with recursion or a stack, while BFS prioritizes breadth and uses a queue. DFS is useful when complete paths or backtracking are required, whereas BFS is better for shortest-path exploration in unweighted graphs.
 
 ### Applications of DFS and BFS
 
@@ -242,7 +242,7 @@ Here, V represents the number of vertices and E represents the number of edges i
 
 ## **Practical 009 — Prim's Algorithm for Minimum Spanning Tree**
 
-This practical explores Prim's Algorithm, a greedy algorithm used to find a Minimum Spanning Tree (MST) in a connected weighted graph. The goal is to connect all vertices with minimum total edge weight while avoiding cycles.
+This practical explores Prim's Algorithm, a greedy algorithm used to find a Minimum Spanning Tree (MST) in a connected weighted graph. The goal is to connect all vertices with minimum total edge weight.
 
 ### Understanding Minimum Spanning Tree
 
@@ -250,7 +250,7 @@ A Minimum Spanning Tree is a subset of the graph's edges that connects all verti
 
 ### Prim's Algorithm Idea
 
-Prim's Algorithm starts from an arbitrary vertex and repeatedly adds the cheapest edge that connects a selected vertex to an unselected vertex. This continues until all vertices are included in the spanning tree.
+Prim's Algorithm starts from an arbitrary vertex and repeatedly adds the cheapest edge that connects a selected vertex to an unselected vertex. This continues until all vertices are included in the tree.
 
 ### Why Prim's Algorithm Works
 
@@ -277,6 +277,43 @@ This repository includes the practical notebook for this algorithm: [DAA_Practic
 
 ---
 
+## **Practical 010 — Kruskal's Algorithm for Minimum Spanning Tree**
+
+This practical explores Kruskal's Algorithm, a greedy algorithm used to find a Minimum Spanning Tree (MST) in a connected weighted graph. The goal is to connect all vertices with the minimum possible total edge weight while avoiding cycles.
+
+### Understanding Minimum Spanning Tree
+
+A Minimum Spanning Tree is a subset of the graph's edges that connects all vertices with the smallest possible total weight. It is useful in network design, communication systems, and optimization problems.
+
+### Kruskal's Algorithm Idea
+
+Kruskal's Algorithm sorts all edges by weight and repeatedly selects the smallest edge that does not create a cycle. This greedy strategy continues until all vertices are connected in a spanning tree.
+
+### Why Kruskal's Algorithm Works
+
+At each step, the algorithm chooses the lowest-weight edge that keeps the graph acyclic. By maintaining a forest and joining components only when necessary, it guarantees a minimum spanning tree for connected weighted graphs.
+
+### Example Output
+
+The practical implementation demonstrates a graph with weighted edges and prints the selected edges along with the total MST cost.
+
+### Applications of Kruskal's Algorithm
+
+Kruskal's Algorithm is used in:
+- Network design and infrastructure planning
+- Computer networking
+- Clustering and optimization problems
+- Minimum cost connectivity in graphs
+
+### Complexity Analysis
+
+- Time Complexity: O(E log E) due to sorting the edges
+- Space Complexity: O(V + E)
+
+This repository includes the practical notebook for this algorithm: [DAA_Practical10.ipynb](DAA_Practical10.ipynb).
+
+---
+
 ## File Structure
 ```
 DAA-practical01-8847/
@@ -289,6 +326,7 @@ DAA-practical01-8847/
 ├── DAA_practical_07.ipynb      # Coin Change Problem (Dynamic Programming)
 ├── DAA_practical_08.ipynb      # Graph Traversal: DFS and BFS
 ├── DAA_Practical09.ipynb       # Prim's Algorithm (Minimum Spanning Tree)
+├── DAA_Practical10.ipynb       # Kruskal's Algorithm (Minimum Spanning Tree)
 └── README.md                   # This file
 ```
 
