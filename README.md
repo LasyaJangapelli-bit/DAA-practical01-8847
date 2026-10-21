@@ -4,19 +4,19 @@ A comprehensive repository for the Design and Analysis of Algorithms (DAA) cours
 
 ## **Practical 001 — Sorting Algorithms**
 
-This practical explores the fundamental sorting algorithms that form the backbone of computer science. You'll learn how different sorting techniques work, their strengths and weaknesses, and when to use each one effectively.
+This practical explores the fundamental sorting algorithms that form the backbone of computer science. You'll learn how different sorting techniques work, their strengths and weaknesses, and when to use each one.
 
 ### Bubble Sort
 
-Bubble Sort is one of the most intuitive sorting algorithms, often the first one taught to beginners. It works by repeatedly stepping through the list, comparing adjacent elements, and swapping them if they are in the wrong order.
+Bubble Sort is one of the most intuitive sorting algorithms, often the first one taught to beginners. It works by repeatedly stepping through the list, comparing adjacent elements, and swapping them when they are in the wrong order.
 
 ### Selection Sort
 
-Selection Sort works by dividing the array into two parts: the sorted portion (at the beginning) and the unsorted portion (the rest). The algorithm repeatedly finds the minimum element from the unsorted part and moves it to the end of the sorted portion.
+Selection Sort works by dividing the array into two parts: the sorted portion (at the beginning) and the unsorted portion (the rest). The algorithm repeatedly finds the minimum element from the unsorted portion and places it at the end of the sorted portion.
 
 ### Insertion Sort
 
-Insertion Sort builds the sorted array one element at a time by inserting each new element into its correct position within the already-sorted portion. It works similarly to how people organize playing cards in hand.
+Insertion Sort builds the sorted array one element at a time by inserting each new element into its correct position within the already-sorted portion. It works similarly to how people organize playing cards in their hands.
 
 ### Merge Sort
 
@@ -82,7 +82,7 @@ Heap Sort repeatedly extracts the maximum element and places it at the end of th
 
 ## **Practical 004 — Recursion: Iterative and Recursive Factorial**
 
-This practical explores the concept of recursion through the lens of factorial calculation. You'll understand how recursive functions work, compare their efficiency with iterative approaches, and learn the importance of base cases.
+This practical explores the concept of recursion through the lens of factorial calculation. You'll understand how recursive functions work, compare their efficiency with iterative approaches, and learn about the importance of base cases.
 
 ### Understanding Factorial and Its Applications
 
@@ -126,7 +126,7 @@ Complexity:
 
 ## **Practical 006 — Cross Matrix Multiplication**
 
-This practical explores matrix multiplication, specifically the cross product and efficient algorithms for multiplying matrices. You'll understand different approaches to matrix multiplication and the importance of optimization in large-scale computations.
+This practical explores matrix multiplication, specifically the cross product and efficient algorithms for multiplying matrices. You'll understand different approaches to matrix multiplication and the trade-offs between them.
 
 ### Understanding Matrix Multiplication
 
@@ -138,11 +138,11 @@ The standard algorithm performs the basic row-by-column dot product calculation.
 
 ### Cross Product in 3D Space
 
-The cross product is a special case of matrix multiplication applicable to 3D vectors. Given two vectors u and v, the cross product u × v results in a vector perpendicular to both u and v. The magnitude depends on the angle between them.
+The cross product is a special case of matrix multiplication applicable to 3D vectors. Given two vectors u and v, the cross product u × v results in a vector perpendicular to both u and v. The magnitude and direction are determined by the angle between them.
 
 ### Strassen's Algorithm: Divide and Conquer Approach
 
-Strassen's Algorithm reduces the number of scalar multiplications required by recursively dividing matrices into smaller submatrices. It achieves O(n^2.807) time complexity compared to O(n^3) for the classical method.
+Strassen's Algorithm reduces the number of scalar multiplications required by recursively dividing matrices into smaller submatrices. It achieves O(n^2.807) time complexity compared to O(n^3) for the traditional approach.
 
 ### Applications of Matrix Multiplication
 
@@ -158,7 +158,7 @@ Matrix multiplication has widespread applications in computer graphics (transfor
 
 ## **Practical 007 — Coin Change Problem**
 
-This practical explores the classic Coin Change problem, a fundamental optimization problem in dynamic programming. You'll learn how to determine the minimum number of coins needed to make a target amount using a given set of denominations.
+This practical explores the classic Coin Change problem, a fundamental optimization problem in dynamic programming. You'll learn how to determine the minimum number of coins needed to make a target amount using available denominations.
 
 ### Introduction to the Coin Change Problem
 
@@ -166,7 +166,7 @@ A common real-world problem is making change with the fewest possible coins. Giv
 
 ### Dynamic Programming Approach
 
-The problem can be solved efficiently using dynamic programming by defining dp[a] as the minimum number of coins needed to make amount a. Each amount is built from smaller amounts, and the best solution is chosen by trying each coin.
+The problem can be solved efficiently using dynamic programming by defining dp[a] as the minimum number of coins needed to make amount a. Each amount is built from smaller amounts, and the best solution is chosen among all valid coin choices.
 
 ### Recurrence Relation
 
@@ -216,15 +216,15 @@ DFS begins at a selected starting vertex, marks it as visited, and then explores
 
 ### Breadth-First Search (BFS)
 
-Breadth-First Search explores a graph level by level. It visits all immediate neighbors of the starting vertex before moving to vertices at the next level. BFS uses a queue to preserve the order in which nodes are processed.
+Breadth-First Search explores a graph level by level. It visits all immediate neighbors of the starting vertex before moving to vertices at the next level. BFS uses a queue to preserve the order in which vertices are discovered.
 
 ### BFS Traversal Process
 
-BFS begins at a selected starting vertex, marks it as visited, and places it in a queue. It repeatedly removes the next vertex from the queue and adds each of its unvisited neighbors. This continues until all nodes are visited.
+BFS begins at a selected starting vertex, marks it as visited, and places it in a queue. It repeatedly removes the next vertex from the queue and adds each of its unvisited neighbors. This continues until the queue is empty.
 
 ### Comparing DFS and BFS
 
-DFS prioritizes depth and is commonly associated with recursion or a stack, while BFS prioritizes breadth and uses a queue. DFS is useful when complete paths or backtracking are required, whereas BFS is ideal for shortest-path problems in unweighted graphs.
+DFS prioritizes depth and is commonly associated with recursion or a stack, while BFS prioritizes breadth and uses a queue. DFS is useful when complete paths or backtracking are required, whereas BFS is ideal for shortest-path problems on unweighted graphs.
 
 ### Applications of DFS and BFS
 
@@ -240,6 +240,43 @@ Here, V represents the number of vertices and E represents the number of edges i
 
 ---
 
+## **Practical 009 — Prim's Algorithm for Minimum Spanning Tree**
+
+This practical explores Prim's Algorithm, a greedy algorithm used to find a Minimum Spanning Tree (MST) in a connected weighted graph. The goal is to connect all vertices with minimum total edge weight while avoiding cycles.
+
+### Understanding Minimum Spanning Tree
+
+A Minimum Spanning Tree is a subset of the graph's edges that connects all vertices with the smallest possible total weight. This is useful in network design, clustering, and optimization problems.
+
+### Prim's Algorithm Idea
+
+Prim's Algorithm starts from an arbitrary vertex and repeatedly adds the cheapest edge that connects a selected vertex to an unselected vertex. This continues until all vertices are included in the spanning tree.
+
+### Why Prim's Algorithm Works
+
+At each step, the algorithm chooses the minimum-weight edge that can extend the current tree. This greedy step guarantees that the tree remains part of a valid minimum spanning tree for the graph.
+
+### Example Output
+
+The practical implementation demonstrates a graph with weighted edges and prints the selected edges along with the total MST weight.
+
+### Applications of Prim's Algorithm
+
+Prim's Algorithm is used in:
+- Network design and infrastructure planning
+- Computer networking
+- Clustering and optimization problems
+- Minimum cost connectivity in graphs
+
+### Complexity Analysis
+
+- Time Complexity: O(V^2) for an adjacency matrix implementation
+- Space Complexity: O(V)
+
+This repository includes the practical notebook for this algorithm: [DAA_Practical09.ipynb](DAA_Practical09.ipynb).
+
+---
+
 ## File Structure
 ```
 DAA-practical01-8847/
@@ -251,6 +288,7 @@ DAA-practical01-8847/
 ├── DAA_practical_06.ipynb      # Cross Matrix Multiplication
 ├── DAA_practical_07.ipynb      # Coin Change Problem (Dynamic Programming)
 ├── DAA_practical_08.ipynb      # Graph Traversal: DFS and BFS
+├── DAA_Practical09.ipynb       # Prim's Algorithm (Minimum Spanning Tree)
 └── README.md                   # This file
 ```
 
